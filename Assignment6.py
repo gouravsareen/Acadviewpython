@@ -1,5 +1,5 @@
 #Q1:-
-l=[]
+'''l=[]
 for i in range(1,11):
     i=input("enter values:")
     l.append(i)
@@ -7,19 +7,18 @@ print(l)
 
 #Q2:-
 a=10
-while(a==10):
+while(a==11):
     print("infinite loop")
-
+'''
 #Q3:-
 m=[]
 n=[]
 for i in range(1,5):
-    i=input("enter values:")
-    m.append(i)
-print(m)
-for i in range(1,5):
-    n.append(i*i)
+    l=int(input("enter values:"))
+    m.append(l)
+    n.append(l*l)
 print(n)
+print(m)
 
 #Q4:-
 k1=[]
