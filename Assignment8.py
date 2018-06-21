@@ -20,6 +20,7 @@ print("tm_wday:-gives the current day of week")
 print("tm_yday:-gives the current day of year")
 print("tm_isdst:-gives the daylight savings")
 
+#Q2:-
 import datetime
 print(datetime.datetime.now().time())
 

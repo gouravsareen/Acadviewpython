@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="285d0283-b550-4ad0-ba34-f38006657c59" name="Default" comment="" />
+    <list default="true" id="285d0283-b550-4ad0-ba34-f38006657c59" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Assignment8.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment8.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,8 @@
       <file leaf-file-name="Assignment8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assignment8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            <state relative-caret-position="88">
+              <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -224,13 +226,13 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
+      <item itemvalue="Python.Assignment8" />
       <item itemvalue="Python.Assignment3" />
       <item itemvalue="Python.Assignment4" />
       <item itemvalue="Python.sample" />
       <item itemvalue="Python.Assignment5" />
       <item itemvalue="Python.Assignment6" />
       <item itemvalue="Python.Assignment7" />
-      <item itemvalue="Python.Assignment8" />
     </list>
     <recent_temporary>
       <list>
@@ -255,10 +257,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="183" y="492" width="895" height="688" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.47667804" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30673498" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -554,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assignment8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+        <state relative-caret-position="88">
+          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
         </state>
       </provider>
     </entry>
