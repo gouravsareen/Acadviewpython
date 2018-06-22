@@ -1,27 +1,3 @@
-#class Complex():
-#    def __init__(self,real,img):
-#        self.r=real
-#        self.i=img
-#        #print("hello")
-#c=Complex(3,4)
-#print(c.r)
-#print(c.i)
-
-#class Apollo():
-#    destination="Moon"
-#    def __init__(self):
-#        print("ready to launch:")
-#    def flying(self):
-#        print("spaceship is flying")
-#    def getdestination(self):
-#        print("the destination is:-"+self.destination)
-#a=Apollo()
-#b=Apollo()
-#print(a.flying())
-#print(a.getdestination())
-#b.destination="mars"
-#print(b.getdestination())
-
 #Q1:-
 class Circle():
     def __init__(self):
