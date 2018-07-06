@@ -7,7 +7,8 @@ print(df.append({'name':'akshu','age':20,'mail_id':'akshitasharma01111@gmail.com
 
 #Q2:-
 import pandas as pd
-df1=pd.read_csv('Data.csv')
+df2=pd.read_csv('Data.csv')
+df1=pd.DataFrame(df2)
 #a.) First 5 rows of Dataframe
 print(df1.head(5))
 #b.) First 10 rows of Dataframe
