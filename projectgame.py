@@ -1,9 +1,10 @@
 import pygame
 import time
 import random
+
 pygame.init()
 
-crash_sound = pygame.mixer.Sound("sbaoke.mp3")
+#crash_sound = pygame.mixer.Sound("crashhh.wav")
 pygame.mixer.music.load("racecar.mp3")
 
 display_width=1000
@@ -23,15 +24,18 @@ gameDisplay=pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('Race-4')
 clock=pygame.time.Clock()
 
-carImg=pygame.image.load('racercar.png')
+carImg=pygame.image.load('racercar1.png')
+bgImage=pygame.image.load('forest.png')
 gameIcon=pygame.image.load('carIcon.png')
 pygame.display.set_icon(gameIcon)
+pauseImg=pygame.image.load("police.png")
+crashImg=pygame.image.load("carcrashhh.png")
 
 pause=False
 
 def things_dodged(count):
-    font=pygame.font.SysFont(None,25)
-    text=font.render("Dodged: "+str(count),True,black)
+    font=pygame.font.SysFont(None,50)
+    text=font.render("Dodged: "+str(count),True,white)
     gameDisplay.blit(text,(0,0))
 
 def things(thingx,thingy,thingw,thingh,color):
@@ -57,9 +61,11 @@ def message_display(text):
 
 def crash():
     pygame.mixer.music.stop()
-    pygame.mixer.Sound.play(crash_sound)
+    #pygame.mixer.Sound.play(crash_sound)
+    gameDisplay.blit(crashImg,(0, 0))
+
     largeText = pygame.font.SysFont("comicsansms", 100)
-    TextSurf, TextRect = text_objects('paused', largeText)
+    TextSurf, TextRect = text_objects('Oops! You Crashed', largeText)
     TextRect.center = ((display_width / 2.0), (display_height / 7.0))
     gameDisplay.blit(TextSurf, TextRect)
 
@@ -68,7 +74,6 @@ def crash():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        #gameDisplay.fill(black)
 
         button1('Play Again', 200, 450, 100, 50, green, light_green,game_loop)
         button1('STOP!', 700, 450, 100, 50, red, light_red,quit)
@@ -82,6 +87,8 @@ def unpaused():
 
 def paused():
     pygame.mixer.music.pause()
+    gameDisplay.blit(pauseImg, (0, 0))
+
     largeText = pygame.font.SysFont("comicsansms", 100)
     TextSurf, TextRect = text_objects('paused', largeText)
     TextRect.center = ((display_width / 2.0), (display_height / 7.0))
@@ -92,7 +99,6 @@ def paused():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-        gameDisplay.fill(black)
 
         button1('Continue', 200, 450, 100, 50, green, light_green,unpaused)
         button1('STOP!', 700, 450, 100, 50, red, light_red,quit)
@@ -123,7 +129,7 @@ def game_intro():
                 pygame.quit()
                 quit()
         gameDisplay.fill(black)
-
+        gameDisplay.blit(bgImage,(0,0))
         largeText = pygame.font.SysFont("comicsansms", 100)
         TextSurf, TextRect = text_objects('Race-4', largeText)
         TextRect.center = ((display_width / 2.0), (display_height / 7.0))
@@ -157,7 +163,7 @@ def game_loop():
     things_speed = 10
     things_width = 30
     things_height = 300
-
+    count=0
     dodged=0
 
     gameExit=False
@@ -189,10 +195,14 @@ def game_loop():
         y+=y_change
 
         gameDisplay.fill(white)
+        gameDisplay.blit(bgImage, (0, 0))
 
-        things(thing_startx,thing_starty,thing_width,thing_height,blue)
+        things(thing_startx,thing_starty,thing_width,thing_height,light_red)
         thing_starty+=thing_speed
-
+        if count==120:
+            count=0
+            things_starty=0
+        count+=1
         things1(things_startx, things_starty, things_width, things_height, black)
         things_starty += things_speed
 
@@ -200,13 +210,16 @@ def game_loop():
         things_dodged(dodged)
 
         if x>display_width-car_width or x<1:
+            print(1)
             crash()
+
 
         if thing_starty>display_height:
             thing_starty=0-thing_height
             thing_startx=random.randrange(0,display_width-thing_width)
             dodged+=1
             thing_speed+=1
+
 
         if y<thing_starty+thing_height:
             print('y crossover')
@@ -215,11 +228,12 @@ def game_loop():
                 print('x crossover')
                 crash()
 
+
         if y > display_height - car_height or y <1:
             crash()
 
-            #if y > thing_startx and y < thing_startx + thing_height or y + car_height > thing_startx and y + car_height < thing_startx + thing_height:
-                #print('yesssss')
+        #if (y > thing_startx and y < thing_startx + thing_height) or (y + car_height > thing_startx + thing_height and y< thing_startx + thing_height):
+          #  crash()
 
         pygame.display.update()
         clock.tick(60)
